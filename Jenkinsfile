@@ -2,7 +2,7 @@ pipeline {
   agent any
   tools {
     maven 'maven'
-    jdk 'JDK17'
+    jdk 'JDK21'
   }
   stages{
     stage('Checkout') {
@@ -11,7 +11,7 @@ pipeline {
       }
     }
     stage('Build') {
-      step {
+      steps {
         sh 'mvn clean install'
         junit 'target/surefire-reports/*.xml'        
       }
@@ -23,7 +23,7 @@ pipeline {
       }
     }
     stage('Test') {
-      step {
+      steps {
         sh 'mvn test'
       }
     }
