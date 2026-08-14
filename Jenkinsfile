@@ -12,7 +12,14 @@ pipeline {
     }
     stage('Build') {
       step {
-        sh 'mvn clean package'
+        sh 'mvn clean install'
+        junit 'target/surefire-reports/*.xml'        
+      }
+    }
+    stage('Package') {
+    steps {
+        sh 'mvn package -DskipTests'
+        archiveArtifacts 'target/java-jenkins-demo-1.0.0.jar'
       }
     }
     stage('Test') {
