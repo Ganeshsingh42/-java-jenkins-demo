@@ -19,7 +19,7 @@ This is a production-ready Maven application that includes:
 - ✅ Comprehensive unit test suite (12 tests, 100% pass rate)
 - ✅ Logging with SLF4J
 - ✅ Fat JAR packaging with maven-shade-plugin
-- ✅ Proper POM configuration for Java 11
+- ✅ Proper POM configuration for Java 21
 
 ## 📁 Project Structure
 
